@@ -6,12 +6,12 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    private var count : Int = 0
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        currentCount.text = "$count"
+        var count : Int = currentCount.text.toString().toInt()
 
         incrementButton.setOnClickListener {
             count++
@@ -21,13 +21,11 @@ class MainActivity : AppCompatActivity() {
         resetButton.setOnClickListener {
             count = 0
             currentCount.text = "$count"
-
         }
 
         decrementButton.setOnClickListener {
             count--
             currentCount.text = "$count"
-
         }
     }
 }
